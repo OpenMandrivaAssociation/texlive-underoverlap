@@ -6,7 +6,7 @@
 # catalog-version 0.0.1-r1
 Name:		texlive-underoverlap
 Version:	0.0.1.r1
-Release:	7
+Release:	8
 Summary:	Position decorations over and under expressions
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/underoverlap
