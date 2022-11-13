@@ -1,18 +1,12 @@
-# revision 29019
-# category Package
-# catalog-ctan /macros/latex/contrib/underoverlap
-# catalog-date 2013-02-03 19:03:00 +0100
-# catalog-license lppl1.3
-# catalog-version 0.0.1-r1
 Name:		texlive-underoverlap
-Version:	0.0.1r1
-Release:	2
+Version:	29019
+Release:	1
 Summary:	Position decorations over and under expressions
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/underoverlap
 License:	LPPL1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/underoverlap.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/underoverlap.doc.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/underoverlap.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/underoverlap.doc.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -24,12 +18,12 @@ that place decorations (such as braces) at arbirary positions
 over and under expressions, overlapping as necessary.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -43,7 +37,7 @@ over and under expressions, overlapping as necessary.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1
+%autosetup -p1 -c -a1
 
 %build
 
