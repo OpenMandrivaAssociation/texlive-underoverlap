@@ -1,6 +1,6 @@
 Name:		texlive-underoverlap
 Version:	29019
-Release:	1
+Release:	2
 Summary:	Position decorations over and under expressions
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/underoverlap
