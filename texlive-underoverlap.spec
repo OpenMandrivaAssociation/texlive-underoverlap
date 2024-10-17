@@ -3,7 +3,7 @@ Version:	29019
 Release:	2
 Summary:	Position decorations over and under expressions
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/underoverlap
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/underoverlap
 License:	LPPL1.3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/underoverlap.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/underoverlap.doc.r%{version}.tar.xz
