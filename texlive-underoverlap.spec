@@ -1,46 +1,22 @@
-Name:		texlive-underoverlap
-Version:	29019
-Release:	2
+%global tl_name underoverlap
+%global tl_revision 77682
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	0.0.1~r1
+Release:	%{tl_revision}.1
 Summary:	Position decorations over and under expressions
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/underoverlap
-License:	LPPL1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/underoverlap.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/underoverlap.doc.r%{version}.tar.xz
+License:	lppl1.3
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/underoverlap.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/underoverlap.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The package overcomes TeX's inherent limitations in commands
-that place decorations (such as braces) at arbirary positions
-over and under expressions, overlapping as necessary.
+The package overcomes TeX's inherent limitations in commands that place
+decorations (such as braces) at arbitrary positions over and under
+expressions, overlapping as necessary.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/tex/latex/underoverlap/underoverlap.sty
-%doc %{_texmfdistdir}/doc/latex/underoverlap/README
-%doc %{_texmfdistdir}/doc/latex/underoverlap/dry.sty
-%doc %{_texmfdistdir}/doc/latex/underoverlap/packagedoc.cls
-%doc %{_texmfdistdir}/doc/latex/underoverlap/underoverlap.pdf
-%doc %{_texmfdistdir}/doc/latex/underoverlap/underoverlap.tex
-%doc %{_texmfdistdir}/doc/latex/underoverlap/with.sty
-
-#-----------------------------------------------------------------------
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex doc %{buildroot}%{_texmfdistdir}
